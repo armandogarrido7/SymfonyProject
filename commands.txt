@@ -1,0 +1,11 @@
+Para crear el proyecto de Symfony
+    composer create-project symfony/skeleton:"6.2.*" airline
+    cd airline
+    composer require webapp
+Para iniciar el servidor Symfony
+    symfony server:start
+    composer require symfony/orm-pack
+Configuramos fichero .env
+    DATABASE_URL="mysql://root@127.0.0.1:3366/airline?serverVersion=8&charset=utf8mb4"
+Creamos base de datos
+    php bin/console doctrine:database:create
