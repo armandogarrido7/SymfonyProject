@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Traveller index{% endblock %}
+
+{% block body %}
+    <h1>Traveller index</h1>
+
+    <table class="table mx-auto">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Surnames</th>
+                <th>Dni</th>
+                <th>Phone</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for traveller in travellers %}
+            <tr>
+                <td>{{ traveller.id }}</td>
+                <td>{{ traveller.name }}</td>
+                <td>{{ traveller.surnames }}</td>
+                <td>{{ traveller.dni }}</td>
+                <td>{{ traveller.phone }}</td>
+                <td>
+                    <a href="{{ path('app_traveller_show', {'id': traveller.id}) }}">show</a>
+                    <a href="{{ path('app_traveller_edit', {'id': traveller.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_traveller_new') }}">Create new</a>
+{% endblock %}

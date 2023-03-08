@@ -3,9 +3,30 @@ Para crear el proyecto de Symfony
     cd airline
     composer require webapp
 Para iniciar el servidor Symfony
-    symfony server:start
+    symfony serve:start
     composer require symfony/orm-pack
 Configuramos fichero .env
     DATABASE_URL="mysql://root@127.0.0.1:3366/airline?serverVersion=8&charset=utf8mb4"
 Creamos base de datos
     php bin/console doctrine:database:create
+Para crear entidades
+    php bin/console make:entity
+Para hacer la migracion
+    php bin/console make:migration
+    php bin/console doctrine:migrations:migrate
+Para hacer CRUD
+    php bin/console make:crud
+Control de usuarios
+    composer require symfony/security-bundle
+    php bin/console make:migration
+    php bin/console doctrine:migrations:migrate
+    composer require symfonycasts/verify-email-bundle
+    php bin/console make:registration-form
+
+Envio de email
+    composer require symfony/google-mailer
+Configuramos fichero .env
+    MAILER_DSN=gmail://armandogarrido87@gmail.com:bzrhbdlnvqmwyvwk@default
+Crear controlador
+    php bin/console make:controller
+ 
