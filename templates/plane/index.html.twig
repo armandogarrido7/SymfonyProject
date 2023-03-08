@@ -13,7 +13,7 @@
                 <th>Max_passengers</th>
                 <th>Company</th>
                 <th>Type</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -25,8 +25,8 @@
                 <td>{{ plane.company }}</td>
                 <td>{{ plane.type }}</td>
                 <td>
-                    <a href="{{ path('app_plane_show', {'id': plane.id}) }}">show</a>
-                    <a href="{{ path('app_plane_edit', {'id': plane.id}) }}">edit</a>
+                    <a href="{{ path('app_plane_show', {'id': plane.id}) }}" class="btn btn-primary">show</a>
+                    <a href="{{ path('app_plane_edit', {'id': plane.id}) }}" class="btn btn-warning">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -37,5 +37,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_plane_new') }}">Create new</a>
+    <a href="{{ path('app_plane_new') }}" class="btn btn-success">Create new</a>
 {% endblock %}

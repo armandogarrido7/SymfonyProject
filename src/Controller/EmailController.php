@@ -16,17 +16,11 @@ class EmailController extends AbstractController
     #[Route('/email', name: 'app_email')]
     public function index(): Response
     {
-        return $this->render('email/index.html.twig', [
-            'controller_name' => 'EmailController',
-        ]);
-    }
-    public function sendEmail(MailerInterface $mailer, Request $request) : Response
-    {
         $transport = Transport::fromDsn($_ENV['MAILER_DSN']);
         $mailer = new Mailer($transport);
         $email = (new Email())
         ->from('armandogarrido87@gmail.com')
-        ->to("")
+        ->to()
         //->cc('cc@example.com')
         //->bcc('bcc@example.com')
         //->replyTo('fabien@example.com')
@@ -39,6 +33,5 @@ class EmailController extends AbstractController
         else {
             return $this->render('email/email_not_sent.html.twig');
         }
-        
-    }
+    }   
 }

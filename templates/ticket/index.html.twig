@@ -9,6 +9,8 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Traveller</th>
+                <th>Flight</th>
                 <th>Type</th>
                 <th>Price</th>
                 <th>actions</th>
@@ -18,11 +20,13 @@
         {% for ticket in tickets %}
             <tr>
                 <td>{{ ticket.id }}</td>
+                <td>{{ ticket.traveller }}</td>
+                <td>{{ ticket.flight }}</td>
                 <td>{{ ticket.type }}</td>
                 <td>{{ ticket.price }}</td>
                 <td>
-                    <a href="{{ path('app_ticket_show', {'id': ticket.id}) }}">show</a>
-                    <a href="{{ path('app_ticket_edit', {'id': ticket.id}) }}">edit</a>
+                    <a href="{{ path('app_ticket_show', {'id': ticket.id}) }}" class="btn btn-primary">show</a>
+                    <a href="{{ path('app_ticket_edit', {'id': ticket.id}) }}" class="btn btn-warning">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -33,5 +37,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_ticket_new') }}">Create new</a>
+    <a href="{{ path('app_ticket_new') }}" class="btn btn-success">Create new</a>
 {% endblock %}

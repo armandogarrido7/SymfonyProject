@@ -34,7 +34,9 @@ class Traveller
     {
         $this->tickets = new ArrayCollection();
     }
-
+    public function __toString(){
+        return ($this->name." ".$this->surnames);
+    }
     public function getId(): ?int
     {
         return $this->id;

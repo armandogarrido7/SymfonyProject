@@ -1,8 +1,8 @@
 <header>
     <nav class="navbar navbar-expand-lg bg-light d-flex justify-content-between">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-        <img src="https://image.pngaaa.com/839/5377839-middle.png" alt="airline_logo" style="width:10vw">
+    <a class="navbar-brand" href="/">
+        <img src="https://seeklogo.com/images/E/Emirates_Airlines-logo-3A6A7D24CA-seeklogo.com.png" alt="airline_logo" style="width:10vw">
     </a>
    <div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,15 +11,28 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/flights">Flights</a>
         </li>
-        <li>
-            <a class="nav-link" href="/register">Register</a>
+        <li class="nav-item">
+            <a class="nav-link" href="/planes">Planes</a>
         </li>
-        {% if %}
+        <li class="nav-item">
+            <a class="nav-link" href="/tickets">Tickets</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/travellers">Travellers</a>
+        </li>
+        <li>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <a class="nav-link" href="/logout">Logout</a>
+            {% else %}
+                <a class="nav-link" href="/login">Login</a>
+            {% endif %}
+        </li>
+        
       </ul>
     </div>
    </div> 

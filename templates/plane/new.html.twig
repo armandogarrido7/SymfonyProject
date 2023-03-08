@@ -3,9 +3,9 @@
 {% block title %}New Plane{% endblock %}
 
 {% block body %}
-    <h1>Create new Plane</h1>
-
-    {{ include('plane/_form.html.twig') }}
-
-    <a href="{{ path('app_plane_index') }}">back to list</a>
+    <div class="d-flex flex-column align-items-center">
+        <h1>Create new Plane</h1>
+        {{ include('plane/_form.html.twig') }}
+        <a href="{{ path('app_plane_index') }}">back to list</a>
+    </div>
 {% endblock %}

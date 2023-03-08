@@ -35,6 +35,10 @@ class Flight
         $this->tickets = new ArrayCollection();
     }
 
+    public function __toString(){
+        return ($this->date."-".$this->time." ".$this->origin."->".$this->arrival);
+    }
+
     public function getId(): ?int
     {
         return $this->id;

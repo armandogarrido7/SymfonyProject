@@ -13,7 +13,7 @@
                 <th>Time</th>
                 <th>Origin</th>
                 <th>Arrival</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -25,8 +25,8 @@
                 <td>{{ flight.origin }}</td>
                 <td>{{ flight.arrival }}</td>
                 <td>
-                    <a href="{{ path('app_flight_show', {'id': flight.id}) }}">show</a>
-                    <a href="{{ path('app_flight_edit', {'id': flight.id}) }}">edit</a>
+                    <a href="{{ path('app_flight_show', {'id': flight.id}) }}" class="btn btn-primary">show</a>
+                    <a href="{{ path('app_flight_edit', {'id': flight.id}) }}" class="btn btn-warning">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -37,5 +37,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_flight_new') }}">Create new</a>
+    <a href="{{ path('app_flight_new') }}" class="btn btn-success">Create new</a>
 {% endblock %}
